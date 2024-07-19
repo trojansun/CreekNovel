@@ -6,7 +6,9 @@
             </el-aside>
             <el-container>
                 <el-header></el-header>
-                <el-main></el-main>
+                <el-main>
+                    <slot/>
+                </el-main>
             </el-container>
         </el-container>
     </div>
