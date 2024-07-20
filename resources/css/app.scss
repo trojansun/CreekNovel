@@ -1,3 +1,25 @@
 .text-center {
     text-align: center;
 }
+
+.el-menu-item {
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: unset;
+        }
+
+        &:visited {
+            color: unset;
+        }
+    }
+
+
+    &.is-active {
+        a {
+            color: #409EFF;
+        }
+    }
+}

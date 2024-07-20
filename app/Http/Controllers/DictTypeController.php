@@ -15,7 +15,10 @@ class DictTypeController extends Controller
     public function index()
     {
         return Inertia::render('system/dictType/index', [
-            'dictTypeList' => DictType::all()
+            'dictTypeList' => DictType::all()->map(function ($dictType) {
+                $dictType['dict_data_url'] = route('dictData.index', ['dict_type' => $dictType->dict_type]);
+                return $dictType;
+            })
         ]);
     }
 

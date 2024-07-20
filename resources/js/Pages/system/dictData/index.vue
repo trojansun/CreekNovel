@@ -1,8 +1,8 @@
 <script setup>
 import {ref} from 'vue'
 
-const props = defineProps({dictTypeList: Object})
-const tableData = ref(props.dictTypeList);
+const props = defineProps({dictDataList: Object})
+const tableData = ref(props.dictDataList);
 
 
 const handleRowDBlClick = (row) => {
@@ -15,9 +15,10 @@ const handleRowDBlClick = (row) => {
     <div>
         <el-table :data="tableData" stripe style="width: 100%"
                   @row-dblclick="handleRowDBlClick">
-            <el-table-column prop="dict_id" label="字典类型ID" width="180" align="center"/>
-            <el-table-column prop="dict_name" label="字典类型名称" width="280" show-overflow-tooltip align="center"/>
-            <el-table-column prop="dict_type" label="字典类型别名" width="280" show-overflow-tooltip align="center"/>
+            <el-table-column prop="dict_code" label="字典编码" width="180" align="center"/>
+            <el-table-column prop="dict_sort" label="字典排序" width="280" show-overflow-tooltip align="center"/>
+            <el-table-column prop="dict_label" label="字典标签" width="280" show-overflow-tooltip align="center"/>
+            <el-table-column prop="dict_value" label="字典键值" width="280" show-overflow-tooltip align="center"/>
             <el-table-column prop="status" label="状态" width="180" align="center">
                 <template #default="{row}">
                     <el-switch v-model="row.status" active-value="1" inactive-value="0"/>
